@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Joe's Blog</title>
+  <title>Making it Marions | Home</title>
   <link rel="stylesheet" type="text/css" href="default.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-  <a href="index.html"><i class="fa fa-globe fa-4x"></i> Making it Marions</a>
+  <header>
+    <a href="index.html"><i class="fa fa-globe fa-4x"></i> Making it Marions</a>
+  </header>
   <nav>
-    <ul>
+    <ul id="main-nav">
       <li><a href="index.html">Home</a></li>
-      <li>Projects</li>
-      <li>Resume</li>
-      <li>About Me</li>
-      <li>Contact</li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
+    <div class="handle">Menu</div>
   </nav>
 
   <section>
@@ -34,6 +38,7 @@
       <li><a href="#">Earliest Blog Post</a></li>
     </ul>
   </aside>
+
   <div>
     <img src="#" class="self-image">
     <p>
@@ -42,17 +47,24 @@
   </div>
 
   <footer>
-    <ul>
-      <li>Home</li>
-      <li>Projects</li>
-      <li>Resume</li>
-      <li>About Me</li>
-      <li>Contact</li>
-      <li>Credits</li>
-    </ul>
-    <a href="http://www.facebook.com/joeymarion"><i class="fa fa-facebook-official"></i></a>
-    <a href="http://www.twitter.com/joezmar"><i class="fa fa-twitter-square"></i></a>
-    <a href="http://www.instagram.com/joezmarion"><i class="fa fa-instagram"></i></a>
+    <div class="wrapper">
+      <ul>
+        <li>Home</li>
+        <li>Projects</li>
+        <li>Resume</li>
+        <li>About Me</li>
+        <li>Contact</li>
+        <li>Credits</li>
+      </ul>
+      <a href="http://www.facebook.com/joeymarion" class="social-icons"><i class="fa fa-facebook-official"></i></a>
+      <a href="http://www.twitter.com/joezmar" class="social-icons"><i class="fa fa-twitter-square"></i></a>
+      <a href="http://www.instagram.com/joezmarion" class="social-icons"><i class="fa fa-instagram"></i></a>
+    </div>
   </footer>
+  <script>
+    $('.handle').on('click', function(){
+      $('nav ul').toggleClass('showing')
+    });
+  </script>
 </body>
 </html>
