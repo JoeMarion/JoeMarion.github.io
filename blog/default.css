@@ -9,10 +9,10 @@ body {
 }
 
 header {
-  background: #00795f;
+  background: #2988BC;
   width: 100%;
   padding: 40px 0;
-  color: white;
+  color: #F4EADE;
   text-align: center;
 }
 
@@ -22,9 +22,9 @@ a {
 }
 
 nav ul {
-  background-color: #43a286;
+  background-color: #2F496E;
   overflow: hidden;
-  color: white;
+  color: #F4EADE;
   padding: 0;
   text-align: center;
   margin: 0;
@@ -41,7 +41,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: #399077;
+  background-color: #0D4D6F;
 }
 
 section {
@@ -54,12 +54,12 @@ section {
 
 .handle {
   width: 100%;
-  background: #005c48;
+  background: #2F496E;
   text-align: left;
   box-sizing: border-box;
   padding: 15px 10px;
   cursor: pointer;
-  color: white;
+  color: #F4EADE;
   display: none;
 }
 
@@ -91,4 +91,23 @@ footer {
 
   display:table-row;
   height:1px;
+  width:100%;
+  overflow: hidden;
 }
+
+footer ul {
+  list-style: none;
+  position: relative;
+  float: left;
+  display: block;
+  left: 50%;
+}
+
+footer ul li {
+  position: relative;
+  float: left;
+  display: block;
+  right: 50%;
+  padding: 10px;
+}
+
