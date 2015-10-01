@@ -1,0 +1,20 @@
+.main-posts header {
+  background-color: #F5F5F5;
+  color: #2988BC;
+}
+
+
+
+.main aside {
+  text-align: center;
+  margin: auto;
+  padding: 5em;
+  width: 60%;
+  float: initial;
+  background-color: #ED8C72;
+}
+
+.main-posts p {
+  text-align: center;
+  margin: 5em;
+}
