@@ -21,6 +21,11 @@
 
 .main-posts p {
   font-size: 1.5em;
+  text-align: left;
+}
+
+.main-posts pre {
+  text-align: left;
 }
 
 .main-posts ul {
