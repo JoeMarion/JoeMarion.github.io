@@ -135,7 +135,7 @@ aside {
 }
 
 .description {
-  position: absolute;
+  position: inherit;
   bottom: 80px;
   left: 0;
   right: 0;
