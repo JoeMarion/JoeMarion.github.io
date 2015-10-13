@@ -29,12 +29,40 @@
         <h4>11 October 2015</h4>
       </header>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>This week I did a lot of work with Enumerable#map. Here is what the ruby docs say about it: </p>
+
+      <img src="../../imgs/enum.png" alt="Enumerable Ruby Doc page" height="500" width="900">
+
+      <p>An enumerable is how Ruby is able to get elements out of a collection, one at a time. Before we go into explaining .map lets go over some other enumerators that are common in Ruby.
+
+        The most common in Ruby would be each. Take a look at the example below:</p>
+
+        <pre>enumerator = [2, 4, 12]</pre>
+        <pre>enumerator.each { |i| puts i + 1 }</pre>
+
+        <p>This creates an array with the values 2, 4, and 12. The Enumerator#each runs through each individual element in the array one at a time and evaluates the code block. i in this case is just a placeholder for each element individually and the block of code is whats to be executed on the element, in this case puts i + 1.</p>
+
+        <p>The map method takes an enumberable ojbect and a block and runs the block for each element, outputting each returned value from the block. This is a non-destructive method unless the map! is used.</p>
+
+        <pre>[1, 2, 3, 4].map { |i| i * i } #=> [1, 4, 9, 16]</pre>
+
+        <p>map with a block returns an Array. Why would we use map over each? One example would be:</p>
+
+        <pre>schools = [harvard, princeton, yale]</pre>
+        <pre>names.map! { |i| i.capitalize }</pre>
+        <pre>names.each { |i| puts i + ' is an okay school to go to.' }</pre>
+
+        <p>The output from the following would be:</p>
+
+        <pre>Harvard is an okay school to go to.</pre>
+        <pre>Princeton is an okay school to go to.</pre>
+        <pre>Yale is an okay school to go to.</pre>
+
+        <p>In the example above map! is converting each element by a rule and each we are just doing something with each element.</p>
+
+
+
+
 
 
     </article>
