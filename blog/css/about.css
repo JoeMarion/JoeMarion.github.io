@@ -7,3 +7,17 @@
   text-align: center;
 
 }
+
+.icon-description p {
+  text-align: center;
+  font-size: x-large;
+  font-weight: lighter;
+
+}
+
+.main-body p {
+  margin: 4em;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
