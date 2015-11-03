@@ -1,0 +1,16 @@
+.main-posts p {
+  font-size: 1em;
+  text-align: left;
+}
+
+.main-posts ul {
+  line-height: 1;
+}
+
+.main-posts h2 {
+  font-size: 1.25em;
+}
+
+.main-posts h3 {
+  font-size: 1.5em;
+}
