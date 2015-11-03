@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Making it Marions | Blog</title>
+  <link rel="stylesheet" type="text/css" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog.css">
+  <link rel="stylesheet" type="text/css" href="../css/ruby-classes.css">
+  <link rel="stylesheet" type="text/css" href="../css/rails.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <a href="../index.html"><i class="fa fa-globe fa-4x"></i> Making it with the Marions</a>
+    </header>
+    <nav>
+      <ul id="main-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../../projects/index.html">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="handle">Menu</div>
+    </nav>
+
+    <article class="main-posts">
+      <header>
+        <h1>What is Rails?</h1>
+        <h4>1 November 2015</h4>
+      </header>
+
+      <p>Rails is technically a package library (or in Ruby called a RubyGem) that is installed using the command-line interface (CLI). It is no ordinary Gem though. Rails is a framework for building websites. It uses programming languages like HTML, CSS, Ruby, and JavaScript to create web applications that run on webservers. It was originally created by David Heinemeier Hansson who was previously a PHP developer who decided to build Ruby on Rails using Ruby because of Rubys clean syntax. PHP was too "dirty" becuase of its frequently repetitive code and other languages like Java were too cumbersome.</p>
+
+      <p>So what is the difference between Rails and other frameworks? That answer lies in the speed and ease of use that developers working within the environment enjoy. Changes made to applications are immediately applied unlike the time consuming steps normally associated with web development. The framework supports MySQL, PostgreSQL, SQLite, SQL Server, DB2, and Oracle. And it is a MVC framework where all layers are provided by Rails, as opposed to reliance on other additional frameworks to achieve full MVC support. One of the great things about Rails though it the community. It is an open-source project with its distrubutions through rubyonrails.org.</p>
+
+      <p>Another characteristic of Rails is the emphasis on RESTful application design. REST (Representational State Transfer) is a style of software architecture based around the client-server relationship. It encourages a logical structure within applications, which means they can easily be exposed as an API.</p>
+
+      <h3>Some of the most compelling arguments as to why Rails is a preferred framework: </h3>
+
+      <ul>
+        <li>The process of programming is much faster than with other frameworks and languages.</li>
+        <li>Rails conventions are similar so it makes it easy for developers to move between different Rails projects. This tends to cause each project to follow a similar structure and coding practice.</li>
+        <li>Rails is good for rapid application development as the framework makes it easy to accomodate changes.</li>
+        <li>Rails has developed a strong focus on testing, and has good testing frameworks.</li>
+      </ul>
+
+      <h3>Some of the downsides and potential issues with Rails</h3>
+
+      <ul>
+        <li>Not all hosts can support Rails</li>
+        <li>Java and PHP are more widely used, and there are more developers in these languages</li>
+        <li>Performance and Scalability</li>
+      </ul>
+
+      <p>Let's look at some of these potential issues.</p>
+
+      <h2>Hosts</h2>
+      <p>Rails is more resource intensive than PHP, but there are several Rails-friendly hosts such as EngineYard and Heroku. You can also host your application on a Virtual Private Server with Amazon EC2, Rackspace, or Linode.</p>
+
+      <h2>Other languages more widely used</h2>
+      <p>There are more and more Ruby developers growing every year. Ruby has a significant amount of open-source gems that can help enhance your applications.</p>
+
+      <h2>Performant and Scalability</h2>
+      <p>Rails may not be as fast as Java or C, but for the majority of applications it will be fast enough. There is even an option of giving your application the same performance characteristics as Java by using JRuby.</p>
+    </article>
+  </div>
+
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li>Home</li>
+        <li>Projects</li>
+        <li>Resume</li>
+        <li>About Me</li>
+        <li>Contact</li>
+        <li>Credits</li>
+        <li><a href="http://www.facebook.com/joeymarion" class="social-icons"><i class="fa fa-facebook-official"></i></a></li>
+        <li><a href="http://www.twitter.com/joezmar" class="social-icons"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="http://www.instagram.com/joezmarion" class="social-icons"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+
+    </div>
+  </footer>
+  <script>
+    $('.handle').on('click', function(){
+      $('nav ul').toggleClass('showing')
+    });
+  </script>
+</body>
+</html>
