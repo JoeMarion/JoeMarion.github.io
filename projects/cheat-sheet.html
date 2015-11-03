@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Making it Marions | Blog</title>
+  <link rel="stylesheet" type="text/css" href="../blog/css/default.css">
+  <link rel="stylesheet" type="text/css" href="../blog/css/blog.css">
+  <link rel="stylesheet" type="text/css" href="../blog/css/ruby-classes.css">
+  <link rel="stylesheet" type="text/css" href="../blog/css/cheatsheet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <a href="../index.html"><i class="fa fa-globe fa-4x"></i> Making it with the Marions</a>
+    </header>
+    <nav>
+      <ul id="main-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="handle">Menu</div>
+    </nav>
+
+    <article class="main-posts">
+      <header>
+        <h1>Cheat Sheet</h1>
+
+      </header>
+
+
+      <div class="ruby">
+
+      <h3>Ruby</h3>
+
+        <h4>Reserved Words</h4>
+        <p>alias, and, BEGIN, begin, break, case, class, def, defined?, do, else, elsif, END, end, ensure, false, for, if, in, module, next, nil, not, or, redo, rescue, retry, return, self, super, then, true, undef, unless, until, when, while, yield</p>
+
+        <h4>Ranges</h4>
+        <pre>
+        1..10
+        1...10
+        'a'..'z'
+        'a'...'z'
+        (1..10)  === 5   # true
+        (1..10)  === 10  # true
+        (1...10) === 10  # false
+        (1..10)  === 15  # false</pre>
+
+        <h4>Arrays</h4>
+        <pre>
+        [1, 2, 3]
+        %w(foo bar baz #{1+1}) == ["foo", "bar", "baz", "\#{1+1}"]
+        %W(foo bar baz #{1+1}) == ["foo", "bar", "baz", "2"]
+        Indexes may be negative, and they index backwards (eg -1 is last element).
+        Hashes
+        {1=>2, 2=>4, 3=>6}
+        { key: val } == { :key => val } # 1.9 only.
+        </pre>
+
+        <h4>Variables</h4>
+
+        <pre>
+        $global_variable
+        @@class_variable
+        @instance_variable
+        CONSTANT
+        ::TOP_LEVEL_CONSTANT
+        OtherClass::CONSTANT
+        local_variable
+        </pre>
+
+        <h4>Control Expressions</h4>
+
+        <pre>
+        if bool-expr [then]
+          body
+        elsif bool-expr [then]
+          body
+        else
+          body
+        end
+
+        unless bool-expr [then]
+          body
+        else
+          body
+        end
+
+        expr if     bool-expr
+        expr unless bool-expr
+
+        bool-expr ? true-expr : false-expr
+
+        case target-expr
+        when comparison [, comparison]... [then]
+          body
+        when comparison [, comparison]... [then]
+          body
+        # ...
+        else # optional else
+          body
+        end
+        Case comparisons may be regexen, classes, whatever. Uses #===.
+        loop do
+          body
+        end
+
+        while bool-expr [do]
+          body
+        end
+
+        until bool-expr [do]
+          body
+        end
+
+        begin
+          body
+        end while bool-expr
+
+        begin
+          body
+        end until bool-expr
+
+        for name [, name]... in expr [do]
+          body
+        end
+
+        expr.each do | name [, name]... | # preferred form over `for`
+          body
+        end
+
+        expr while bool-expr
+        expr until bool-expr
+
+        break # terminates loop immediately.
+        redo  # immediately repeats w/o rerunning the condition.
+        next  # starts the next iteration through the loop.
+        retry # restarts the loop, rerunning the condition.
+        </pre>
+
+        <h4>Invoking a Method</h4>
+        <p>Nearly everything available in a method invocation is optional, consequently the syntax is very difficult to follow. Here are some examples:</p>
+
+        <pre>
+        method
+        obj.method
+        Class::method # don't use this
+        Class.method
+
+        method(key1 => val1, key2 => val2) # one hash arg, not 2
+
+        method(arg1, *[arg2, arg3]) == method(arg1, arg2, arg3)
+
+        # As ugly as you want it to be:
+        method(arg1, key1 => val1, key2 => val2, *splat_arg) #{ block }
+        The argument syntax is fairly complex:
+        invocation := [receiver ('::' | '.')] name [ parameters ] [ block ]
+        parameters := ( [param]* [',' hashlist] ['*' array] [&aProc] )
+        block      := '{' blockbody '}' | 'do' blockbody 'end'
+        </pre>
+
+        <h4>Defining a Class</h4>
+
+        <p>Class names begin w/ capital character.
+        <pre>
+        class Identifier [< superclass ]
+          expr..
+        end
+
+        # singleton classes, add methods to a single instance
+        class << obj
+          expr..
+        end
+        </pre>
+
+        <h4>Defining a Module</h4>
+
+        <pre>
+        module Identifier
+          expr..
+        end
+        Defining a Method
+        def method_name(arg_list, *list_expr, &block_expr)
+          expr..
+        end
+
+        # singleton method
+        def expr.identifier(arg_list, *list_expr, &block_expr)
+          expr..
+        end
+        • All items of the arg list, including parens, are optional.
+        • Arguments may have default values (name=expr).
+        • Method_name may be operators (see above).
+        • The method definitions can not be nested.
+        • Methods may override operators: |, ^, &, <=>, ==, ===, =~, >, >=, <, <=, +, -, *, /, %, **, <<, >>, ~, +@, -@, [], []= (2 args)
+        </pre>
+
+
+
+      </div>
+
+      <div class="javascript">
+      <h2>JavaScript</h2>
+      </div>
+
+        <h4>Useful math properties</h4>
+        <pre>Math.random()</pre>
+        <p>Produce a random number between 0 and 1.</p>
+        <pre>Math.round(x)</pre>
+        <p>Round x to an integer.</p>
+        <pre>Math.abs(x)</pre>
+        <p>Returns the absolute (positive) value of x.</p>
+        <pre>
+        Math.max(a, b, c, ...)
+        Math.min(a, b, c, ...)
+        </pre>
+
+        <p>Given any number of values, returns the greatest (max) or smallest (min) one.</p>
+        <pre>
+        Math.PI
+        The pi (π) constant.
+        Math.cos(x) Math.sin(x) Math.tan(x)
+        # Trigonometric functions.
+        Math.acos(x) Math.asin(x) Math.atan(x)
+        Inverse trigonometric functions.
+        </pre>
+
+        <h4>Useful array properties</h4>
+        <p>a[i]
+        If i is an integer, this will access the element at that position.
+        a.length
+        The number of elements in the array.
+        a.push(b)
+        Add value b to the end of the array.
+        a.pop()
+        Remove the last element of the array, and return it.
+        a.slice(from, to)
+        Get a piece of the array, similar to the slice method on strings.</p>
+
+        <h4>Useful functions</h4>
+        <p>Number(v)
+        Converts v to a number. Number("5") gives 5.
+        String(v)
+        Converts v to a string.
+        alert("hello")
+        Show a dialog window saying 'hello'.
+        confirm("are you sure?")
+        Show a yes/no dialog. Returns a true/false value indicating whether the user clicked yes.
+        prompt("what is your name?", "")
+        Show a dialog asking for input. First argument is the message, second argument is the initial value of the input.</p>
+
+    </article>
+  </div>
+
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li>Home</li>
+        <li>Projects</li>
+        <li>Resume</li>
+        <li>About Me</li>
+        <li>Contact</li>
+        <li>Credits</li>
+        <li><a href="http://www.facebook.com/joeymarion" class="social-icons"><i class="fa fa-facebook-official"></i></a></li>
+        <li><a href="http://www.twitter.com/joezmar" class="social-icons"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="http://www.instagram.com/joezmarion" class="social-icons"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+
+    </div>
+  </footer>
+  <script>
+    $('.handle').on('click', function(){
+      $('nav ul').toggleClass('showing')
+    });
+  </script>
+</body>
+</html>

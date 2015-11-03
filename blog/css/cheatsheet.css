@@ -1,0 +1,27 @@
+.main-posts h3 {
+  font-size: 200%;
+  text-align: center;
+}
+
+.main-posts h4 {
+  font-size: 125%;
+  text-align: center;
+}
+
+.main-posts p {
+  line-height: 2;
+  font-size: 100%
+}
+
+.ruby {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+.javascript {
+  display: inline-block;
+  float: right;
+  width: 50%;
+}
