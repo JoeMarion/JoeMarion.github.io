@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>JavaScript Prototypes vs Ruby Classes</title>
+      <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+      <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <link href='/css/framework.css' rel='stylesheet'>
+      <link href='/css/syntax.css' rel='stylesheet'>
+      <link href='/css/style.css' rel='stylesheet'>
+      <link href='/css/fontello.css' rel='stylesheet'>
+
+      <script src='/js/modernizr.js'></script>
+
+    </head>
+    <body>
+      <div class='contain-to-grid sticky'>
+        <nav class='top-bar' data-options='sticky_on: large' data-topbar=''>
+          <ul class='title-area'>
+            <li class='name'>
+              <h1>
+                <img src='/images/logo.png'>
+                <a href='/'>squarebox</a>
+              </h1>
+            </li>
+            <li class='toggle-topbar menu-icon'>
+              <a href='#'>Menu</a>
+            </li>
+          </ul>
+          <section class='top-bar-section'>
+            <ul class="right">
+              
+                
+                  
+                
+
+                
+                  <li class="has-dropdown ">
+                    <a href="/index.html">Home</a>
+                    <ul class='dropdown'>
+                      
+                        <li>
+                          <a href="/index.html">Home default</a>
+                        </li>
+                      
+                        <li>
+                          <a href="/index-alternative.html">Home alternative</a>
+                        </li>
+                      
+                    </ul>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="">
+                    <a href="/services.html">Services</a>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="">
+                    <a href="/about.html">About</a>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="has-dropdown ">
+                    <a href="/portfolio.html">Portfolio</a>
+                    <ul class='dropdown'>
+                      
+                        <li>
+                          <a href="/portfolio.html">Portfolio</a>
+                        </li>
+                      
+                        <li>
+                          <a href="/portfolio-item.html">Portfolio single</a>
+                        </li>
+                      
+                    </ul>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="active">
+                    <a href="/blog/">Blog</a>
+                  </li>
+                
+              
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+
+      <div class='full'>
+  <div class='row'>
+    <div class='special-title centered-text'>
+      <i class='icon-thumbs-up'></i>
+      <h2>Our Blog</h2>
+      <p>We are passionate about web design &amp; development</p>
+      <p class='shortline'></p>
+    </div>
+    <div class='spacing'></div>
+    <div class='spacing'></div>
+  </div>
+  <div class='row'>
+    <div class='large-12 columns'>
+
+      
+
+
+<div class='post'>
+  <div class='timestamp left text-center'>
+    <span class='month'>Oct</span>
+    <span class='date'>22</span>
+  </div>
+  <div class='info'>
+    <h3>
+      <a href='/2015/10/22/javascript-prototypes-vs-ruby-classes.html'>JavaScript Prototypes vs Ruby Classes</a>
+    </h3>
+    <p>
+      By
+      <span class='author'>Joe Marion</span>
+      |
+      <a href='/2015/10/22/javascript-prototypes-vs-ruby-classes.html#comments'>Comments 0</a>
+    </p>
+  </div>
+  <div class='content'>
+    <p>Looking at the two languages it is easy to compare Javascript&#39;s prototypes to Ruby&#39;s classes. They may be working to accomplish the same thing, but their approach is what makes them different.</p>
+
+<!--more-->
+
+<p>First, let&#39;s look at what Ruby&#39;s classes are and what they are in charge of doing. They create new objects, and define the blueprint from which the manufactored objects behaves. Classes are Objects interact with other objects by providing a collection of methods that match the concerns the other objects manage. Objects then implement those methods by manipulating thier internal, hidden-state. Ruby&#39;s methods encapsulate their inner state so that working within Ruby presents an interface for   uerying and updating object behaviour through methods. <a href="http://raganwald.com/2014/01/19/prototypes-are-not-classes.html">Raganwald</a> had some interesting points on this topic explaining the differences.</p>
+
+<p>In JavaScript, their objects do not have formal classes. They are created with a constructor and in JavaScript any function can be a constructor. An instance constructor is a function that was invoked with the new operator.</p>
+
+<h4>A common way you may see constructors written in JavaScript coming from a class-based language may look like:</h4>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">getFull</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">family</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This might not be the best approach because using the this keyword it is bound. Using constructors like this is much more like creating a static method. In the code above, you are providing that method to only that particular instance. Functions can, for the most part, be treated just like objects in JavaScript.</p>
+
+<p>Here is where prototypes come into play. Prototypes will allow methods to be easily defined to instances of the instance in a way that saves memory. The method will be applied to the prototype of the object, so it is only stored once in the memory. This is helpful because objects coming from the same constructor point to one common object. All instances will have access to that method.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getFull</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">family</span><span class="p">;</span>
+  <span class="p">};</span>
+</code></pre></div>
+<p>The difference between this prototype and the previous constructor is that any method attached with the this keyword will get re-declared for every new instance we create, which could heavily impact the memory usage of the application. Now with objects in the prototype it saves a considerable amount of memory not re-declaring for every new instance.</p>
+
+<p>Back to the differences between classes and prototypes, a class can be an object, but it has special properties and methods.</p>
+
+  </div>
+</div>
+
+<a id='comments'></a>
+<div class='comments-wrapper'>
+  <h3 class='comments-count'>0 Comments</h3>
+
+</div>
+
+<div id='comments-form'>
+  <h3>Your comment</h3>
+  <form accept-charset='UTF-8' action='' method='post'>
+    <p class='name'>
+      <label for='name'>Your Name</label>
+      <input class='input-text required' id='name' name='name' type='text'>
+    </p>
+    <p class='email'>
+      <label for='email'>Your Email</label>
+      <input class='input-text required' id='email' name='email' type='text'>
+    </p>
+    <p class='message'>
+      <label for='message'>Your Message</label>
+      <textarea class='required' cols='80' id='message' name='message' rows='5'></textarea>
+    </p>
+    <div class='spacing'></div>
+    <p>
+      <input class='button' type='submit' value='Send Message'>
+    </p>
+  </form>
+</div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+      <div class='footer centered-text'>
+        <div class='spacing'></div>
+        <div class='row'>
+          <div class='large-12 columns'></div>
+          <h1 class='light'>
+            <img src='/images/logo-grey.png'>
+            <br>
+            <div class='spacing'></div>
+            squarebox
+          </h1>
+          <div class='spacing'></div>
+          <div class='spacing'></div>
+          <div class='socials centered-text'>
+            <a href='#'>
+              <i class='icon-twitter grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-facebook grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-vimeo grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-mail grey'></i>
+            </a>
+          </div>
+          <p class='copyright'>Copyright 2015 Making it with the Marions</p>
+        </div>
+      </div>
+
+      <script src='/js/jquery.min.js'></script>
+      <script src='/js/foundation.min.js'></script>
+      <script src='/js/jquery.countTo.js'></script>
+      <script src='/js/jquery.appear.js'></script>
+      <script src='/js/app.js'></script>
+    </body>
+</html>

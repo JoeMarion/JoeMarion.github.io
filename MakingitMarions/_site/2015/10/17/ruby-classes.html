@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Ruby Classes</title>
+      <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+      <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <link href='/css/framework.css' rel='stylesheet'>
+      <link href='/css/syntax.css' rel='stylesheet'>
+      <link href='/css/style.css' rel='stylesheet'>
+      <link href='/css/fontello.css' rel='stylesheet'>
+
+      <script src='/js/modernizr.js'></script>
+
+    </head>
+    <body>
+      <div class='contain-to-grid sticky'>
+        <nav class='top-bar' data-options='sticky_on: large' data-topbar=''>
+          <ul class='title-area'>
+            <li class='name'>
+              <h1>
+                <img src='/images/logo.png'>
+                <a href='/'>squarebox</a>
+              </h1>
+            </li>
+            <li class='toggle-topbar menu-icon'>
+              <a href='#'>Menu</a>
+            </li>
+          </ul>
+          <section class='top-bar-section'>
+            <ul class="right">
+              
+                
+                  
+                
+
+                
+                  <li class="has-dropdown ">
+                    <a href="/index.html">Home</a>
+                    <ul class='dropdown'>
+                      
+                        <li>
+                          <a href="/index.html">Home default</a>
+                        </li>
+                      
+                        <li>
+                          <a href="/index-alternative.html">Home alternative</a>
+                        </li>
+                      
+                    </ul>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="">
+                    <a href="/services.html">Services</a>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="">
+                    <a href="/about.html">About</a>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="has-dropdown ">
+                    <a href="/portfolio.html">Portfolio</a>
+                    <ul class='dropdown'>
+                      
+                        <li>
+                          <a href="/portfolio.html">Portfolio</a>
+                        </li>
+                      
+                        <li>
+                          <a href="/portfolio-item.html">Portfolio single</a>
+                        </li>
+                      
+                    </ul>
+                  </li>
+                
+              
+                
+                  
+                
+
+                
+                  <li class="active">
+                    <a href="/blog/">Blog</a>
+                  </li>
+                
+              
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+
+      <div class='full'>
+  <div class='row'>
+    <div class='special-title centered-text'>
+      <i class='icon-thumbs-up'></i>
+      <h2>Our Blog</h2>
+      <p>We are passionate about web design &amp; development</p>
+      <p class='shortline'></p>
+    </div>
+    <div class='spacing'></div>
+    <div class='spacing'></div>
+  </div>
+  <div class='row'>
+    <div class='large-12 columns'>
+
+      
+
+
+<div class='post'>
+  <div class='timestamp left text-center'>
+    <span class='month'>Oct</span>
+    <span class='date'>17</span>
+  </div>
+  <div class='info'>
+    <h3>
+      <a href='/2015/10/17/ruby-classes.html'>Ruby Classes</a>
+    </h3>
+    <p>
+      By
+      <span class='author'>Joe Marion</span>
+      |
+      <a href='/2015/10/17/ruby-classes.html#comments'>Comments 0</a>
+    </p>
+  </div>
+  <div class='content'>
+    <p>Since Ruby is an object-oriented and along with objects there are classes. Classes are like outlines that objects are instantiated upon. For this example I will use the common car reference. If we examine a vehicle, there are characteristics that make up what a vehicle is. Wheels, fuel capacity, power, etc are all data members of the class Vehicle. Using data members within the class, you can identify different objects that are instances of that class. To continue the example if I were to have two vehicles, a Pathfinder, and a Tacoma these would both be considered objects in Ruby that are instances of the class Vehicle. Both vehicles have data memebers that are different that help differentiate the two.</p>
+
+<!--more-->
+
+<p>This can be taken even further becuase vehicles have different functions. They can drive, stop, turn, accelerate, etc. These functions that are built within a class can even further form the data members within the class Vehicle. A class would be described as characteristics and functions together that make up the object.</p>
+
+<h3>Defining a Class</h3>
+
+<p>Classes typically start with an initial capitalized letter. For this example we are going to create a class called Die that will return a random number based on how many sides of a die is entered.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Die</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Here we have just created an empty class that we will work on throughout this post. One important topic we should go over is the importance of variables within classes.</p>
+
+<ul>
+<li>Local: Local variables have the smallest scope out of the four types of variables. They are located within methods and are not available outside of the method. The syntax for local variables is typically a lowercase letter or an underscore.</li>
+<li>Instance. Instance variables are available accross methods for a particular instance or object. This is commonly seen within classes because an object that is an instance of a class can have access to the instance variables accross the entire range of the class within that object. (If this sounds confusing it will make more sense when we build Die) The syntax for an instance variable is @ before the variable name.</li>
+<li>Class: Class variables are available accross different objects that belongs to the class. It is a characteristic of the class. The syntax for a Class variable is @@ before the variable name.</li>
+<li>Global: Global variables are available accross classes. Class variables are available accross objects, but not classes. That is why you would use a global. Global variables syntax is the dollar sign $ before the variable name.</li>
+</ul>
+
+<h3>Methods within classes</h3>
+
+<p>So far in our class Die we don&#39;t have anything put in. One thing that classes are capable of, are adding methods to the class. The first method should be to initialize it. This is typically the first method ran when creating a new object thats instance of the class.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Die</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+  <span class="vi">@labels</span> <span class="o">=</span> <span class="n">labels</span>
+  <span class="k">raise</span> <span class="no">ArgumentError</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Please add sides to the die&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">labels</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="k">end</span>
+<span class="o">.</span><span class="n">.</span>
+</code></pre></div>
+<p>So far all this class is doing is initializing and taking in one argument and storing it within an instance variable called @labels. This is done because we want to access the variable throughout this class and not just within the initialize method. That&#39;s why we wouldn&#39;t just keep it a local variable. As you can see, classes also let you set parimeters that can raise arguments if something is wrong.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Die</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+    <span class="vi">@labels</span> <span class="o">=</span> <span class="n">labels</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;Please add sides to the die&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">labels</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">sides</span>
+    <span class="k">return</span> <span class="vi">@labels</span><span class="o">.</span><span class="n">length</span>
+<span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">roll</span>
+    <span class="k">return</span> <span class="vi">@labels</span><span class="o">[</span><span class="nb">rand</span><span class="p">(</span><span class="vi">@lavels</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Here is the rest of the class Die. Look over and review why it is important to use instance variables in this situation. A question to answer is, why wouldn&#39;t we just use global variables? Well.. If we did that we would not only have to remember every single time we created a variable, but it would also leave the program more susceptible to malicious attacks and inefficient running. Especially on a high-traffic website.</p>
+
+  </div>
+</div>
+
+<a id='comments'></a>
+<div class='comments-wrapper'>
+  <h3 class='comments-count'>0 Comments</h3>
+
+</div>
+
+<div id='comments-form'>
+  <h3>Your comment</h3>
+  <form accept-charset='UTF-8' action='' method='post'>
+    <p class='name'>
+      <label for='name'>Your Name</label>
+      <input class='input-text required' id='name' name='name' type='text'>
+    </p>
+    <p class='email'>
+      <label for='email'>Your Email</label>
+      <input class='input-text required' id='email' name='email' type='text'>
+    </p>
+    <p class='message'>
+      <label for='message'>Your Message</label>
+      <textarea class='required' cols='80' id='message' name='message' rows='5'></textarea>
+    </p>
+    <div class='spacing'></div>
+    <p>
+      <input class='button' type='submit' value='Send Message'>
+    </p>
+  </form>
+</div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+      <div class='footer centered-text'>
+        <div class='spacing'></div>
+        <div class='row'>
+          <div class='large-12 columns'></div>
+          <h1 class='light'>
+            <img src='/images/logo-grey.png'>
+            <br>
+            <div class='spacing'></div>
+            squarebox
+          </h1>
+          <div class='spacing'></div>
+          <div class='spacing'></div>
+          <div class='socials centered-text'>
+            <a href='#'>
+              <i class='icon-twitter grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-facebook grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-vimeo grey'></i>
+            </a>
+            <a href='#'>
+              <i class='icon-mail grey'></i>
+            </a>
+          </div>
+          <p class='copyright'>Copyright 2015 Making it with the Marions</p>
+        </div>
+      </div>
+
+      <script src='/js/jquery.min.js'></script>
+      <script src='/js/foundation.min.js'></script>
+      <script src='/js/jquery.countTo.js'></script>
+      <script src='/js/jquery.appear.js'></script>
+      <script src='/js/app.js'></script>
+    </body>
+</html>
