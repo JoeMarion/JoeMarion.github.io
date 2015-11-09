@@ -1,0 +1,56 @@
+---
+layout: blog
+section_id: blog
+---
+
+{{page.categories}}
+
+
+<div class='post'>
+  <div class='timestamp left text-center'>
+    <span class='month'>{{ page.date | date: "%h" }}</span>
+    <span class='date'>{{ page.date | date: "%d" }}</span>
+  </div>
+  <div class='info'>
+    <h3>
+      <a href='{{page.url}}'>{{ page.title }}</a>
+    </h3>
+    <p>
+      By
+      <span class='author'>{{ page.author }}</span>
+      |
+      <a href='{{page.url}}#comments'>Comments 0</a>
+    </p>
+  </div>
+  <div class='content'>
+    {{ content }}
+  </div>
+</div>
+
+<a id='comments'></a>
+<div class='comments-wrapper'>
+  <h3 class='comments-count'>0 Comments</h3>
+
+</div>
+
+<div id='comments-form'>
+  <h3>Your comment</h3>
+  <form accept-charset='UTF-8' action='' method='post'>
+    <p class='name'>
+      <label for='name'>Your Name</label>
+      <input class='input-text required' id='name' name='name' type='text'>
+    </p>
+    <p class='email'>
+      <label for='email'>Your Email</label>
+      <input class='input-text required' id='email' name='email' type='text'>
+    </p>
+    <p class='message'>
+      <label for='message'>Your Message</label>
+      <textarea class='required' cols='80' id='message' name='message' rows='5'></textarea>
+    </p>
+    <div class='spacing'></div>
+    <p>
+      <input class='button' type='submit' value='Send Message'>
+    </p>
+  </form>
+</div>
